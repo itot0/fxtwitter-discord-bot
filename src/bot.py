@@ -26,7 +26,7 @@ async def process_message(message):
     original_domain = 'https://x.com'
     replacement_domain = 'https://fxtwitter.com'
     if original_domain in message.content:
-        new_message = message.content.replace(original_domain, replacement_domain)
+        new_message = f"{message.author.mention}, here's your updated link: {message.content.replace(original_domain, replacement_domain)}"
         try:
             await message.delete()
             print("Original message deleted.")
